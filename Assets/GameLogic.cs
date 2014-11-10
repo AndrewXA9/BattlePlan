@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Player : MonoBehaviour {
+public class GameLogic : MonoBehaviour {
 
 	public enum States {Drawing, Shooting, Boosting, Simulating};
 	public States state;
+	
+	public GameObject ship;
 	
 	private Rect drawRect;
 	
@@ -56,13 +58,9 @@ public class Player : MonoBehaviour {
 	
 	IEnumerator Simulating(){
 		progress = 0;
+		
 		while(state == States.Simulating){
 			
-			
-			
-			//while(progress < prePath.Count){
-				
-			//}
 			
 			yield return null;
 		}
