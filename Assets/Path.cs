@@ -13,13 +13,13 @@ public class Path{
 		
 		int size = input.Count;
 		float step = ((float)size/(float)rez);
-		Debug.Log("Creating with rez of "+rez.ToString()+" from size of "+size.ToString());
-		Debug.Log("Step size of "+step.ToString());
+		//Debug.Log("Creating with rez of "+rez.ToString()+" from size of "+size.ToString());
+		//Debug.Log("Step size of "+step.ToString());
 		
 		for(int i=0;i<rez;i++){
-			Debug.Log("Iteration "+i.ToString());
+			//Debug.Log("Iteration "+i.ToString());
 			float pos = Mathf.Clamp((float)step*i,0f,size-1f);
-			Debug.Log("Position "+pos.ToString());
+			//Debug.Log("Position "+pos.ToString());
 			nodeVectors.Add(Vector3.Lerp(input[(int)Mathf.Floor(pos)],input[(int)Mathf.Ceil(pos)],pos%1));
 		}
 		
