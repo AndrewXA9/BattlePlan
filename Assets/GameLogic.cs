@@ -46,7 +46,7 @@ public class GameLogic : MonoBehaviour {
 				}
 			}
 			if(Input.GetMouseButtonUp(0)){
-				dicks = new Path(prePath,100);
+				dicks = new Path(prePath,75);
 				GameObject butts = Instantiate(ship,dicks.nodeVectors[0],dicks.nodeQuats[0]) as GameObject;
 				butts.GetComponent<PathMove>().go = true;
 				butts.GetComponent<PathMove>().path = dicks;

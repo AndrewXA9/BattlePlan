@@ -9,9 +9,8 @@ public class PathMove : MonoBehaviour {
 	public float progress = 0;
 	
 	void Update () {
-		Debug.Log(((float)(path.nodeVectors.Count-1f)/progress)%1);
-		this.transform.position = Vector3.Lerp(path.nodeVectors[(int)(Mathf.Floor(progress))],path.nodeVectors[(int)(Mathf.Ceil(progress+1))],0);
-		this.transform.localRotation = Quaternion.Lerp(path.nodeQuats[(int)(Mathf.Floor(progress))],path.nodeQuats[(int)(Mathf.Ceil(progress+1))],progress/(path.nodeVectors.Count-1f));
+		this.transform.position = Vector3.Lerp(path.nodeVectors[(int)(Mathf.Floor(progress))],path.nodeVectors[(int)(Mathf.Ceil(progress))],(progress)%1);
+		//this.transform.localRotation = Quaternion.Lerp(path.nodeQuats[(int)(Mathf.Floor(progress))],path.nodeQuats[(int)(Mathf.Ceil(progress+1))],progress/(path.nodeVectors.Count-1f));
 		progress += Time.deltaTime*speed;
 	}
 	
